@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Answer Beans -->
+    <bean id="ans1" class="com.example.SpringTutorial.DI.ByConstructor.WithCollection.List_Set.Answer">
+        <constructor-arg value="3"/>
+        <constructor-arg value="DSA"/>
+        <constructor-arg value="Lit"/>
+    </bean>
+
+    <bean id="ans2" class="com.example.SpringTutorial.DI.ByConstructor.WithCollection.List_Set.Answer">
+        <constructor-arg value="4"/>
+        <constructor-arg value="DBMS"/>
+        <constructor-arg value="John"/>
+    </bean>
+
+    <!-- Question Bean -->
+    <bean id="question" class="com.example.SpringTutorial.DI.ByConstructor.WithCollection.List_Set.Question">
+        <constructor-arg value="111"/>
+        <constructor-arg value="What Is Java?"/>
+        <constructor-arg>
+            <list>
+                <value>Java is a Programming Language</value>
+                <value>Java is a Platform</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg>
+            <list>
+                <ref bean="ans1"/>
+                <ref bean="ans2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>

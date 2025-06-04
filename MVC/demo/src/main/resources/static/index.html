@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+</head>
+<body>
+<h2>Upload File</h2>
+<form method="POST" action="/api/files/upload" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button type="submit">Upload</button>
+</form>
+
+<h2>Upload File to Database</h2>
+<form method="POST" action="/api/files/uploadDB" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button type="submit">Upload to DB</button>
+</form>
+</body>
+</html>

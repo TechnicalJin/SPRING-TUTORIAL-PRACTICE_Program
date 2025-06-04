@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean class="com.example.SpringTutorial.DI.ByConstructor.WithCollection.Map.Answer" name="ans1">
+        <constructor-arg value="1"/>
+        <constructor-arg value="Java Is Programing Language"/>
+        <constructor-arg value="12/12/1234"/>
+    </bean>
+
+    <bean class="com.example.SpringTutorial.DI.ByConstructor.WithCollection.Map.Answer" name="ans2">
+        <constructor-arg value="2"/>
+        <constructor-arg value="Java Is Platform"/>
+        <constructor-arg value="11/11/1234"/>
+    </bean>
+
+
+
+    <bean class="com.example.SpringTutorial.DI.ByConstructor.WithCollection.Map.User" name="user1">
+        <constructor-arg value="1"/>
+        <constructor-arg value="John"/>
+        <constructor-arg value="john@gmail.com"/>
+    </bean>
+
+    <bean class="com.example.SpringTutorial.DI.ByConstructor.WithCollection.Map.User" name="user2">
+        <constructor-arg value="2"/>
+        <constructor-arg value="Wick"/>
+        <constructor-arg value="Wick@gmail.com"/>
+    </bean>
+
+
+
+    <bean class="com.example.SpringTutorial.DI.ByConstructor.WithCollection.Map.Question" name="que">
+        <constructor-arg value="1"/>
+        <constructor-arg value="John Wick"/>
+        <constructor-arg>
+            <map>
+                <entry key-ref="ans1" value-ref="user1"/>
+                <entry key-ref="ans2" value-ref="user2"/>
+            </map>
+        </constructor-arg>
+    </bean>
+
+</beans>
